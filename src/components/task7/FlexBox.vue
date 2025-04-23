@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-[20px] bg-black w-full">
+  <div class="container p-[20px] bg-black w-full m-[5px]">
     <div class="content p-[40px]">
       <div class="box red">1</div>
       <div class="box blue">2</div>
