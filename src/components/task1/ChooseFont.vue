@@ -1,13 +1,21 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen dark:text-white dark:bg-[#424242]">
-    <strong :class="Fontchanging" class="px-1 gap-5">change Font Size</strong>
-    <v-select
-      v-model="FontSize"
-      :items="['small', 'medium', 'larg']"
-      label="Choose Font Size"
-      single-line
-      @update:model-value="changeSize"
-    ></v-select>
+  <div
+    class="flex items-center justify-center min-h-screen dark:text-white dark:bg-[#424242]"
+  >
+    <v-row class="p-[20px]">
+      <v-col cols="12" md="6" lg="6">
+        <strong :class="Fontchanging" class="px-1 gap-5">change Font Size</strong>
+      </v-col>
+      <v-col cols="12" md="6" lg="6">
+        <v-select
+          v-model="FontSize"
+          :items="['small', 'medium', 'larg']"
+          label="Choose Font Size"
+          single-line
+          @update:model-value="changeSize"
+        ></v-select>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
