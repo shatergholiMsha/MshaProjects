@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-center min-h-screen dark:text-white dark:bg-[#424242]"
+    class="flex items-center justify-center pt-[200px] pb-[200px] dark:text-white dark:bg-[#424242]"
   >
     <v-row class="p-[20px]">
       <v-col cols="12" md="6" lg="6">
