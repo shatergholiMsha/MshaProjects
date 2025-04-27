@@ -2,16 +2,22 @@ import axios from "axios";
 
 const Base_url = "https://jsonplaceholder.typicode.com/users";
 const cache = new Map();
-let controller = null;
+let Controller = null;
 
 export async function getUserData(userId) {
-    if (cache.has(userId)) {
-        console.log("cache is not empty");
-    }
     try {
+        let id = String(userId)
+        if (cache.has(id)) {
+            const dataFromCache = cache.get(id);
+            console.log(dataFromCache, "dataFromCache");
+            return dataFromCache
+        }
+        if (Controller) Controller.abort();
+        Controller = new AbortController();
+        const signal = Controller.signal;
         const url = `${Base_url}/${userId}`;
-        const { data } = await axios.get(url);
-        console.log(data, "this is fetch data from mock API");
+        const { data } = await axios.get(url, { signal });
+        cache.set(id, data);
         return data
     } catch (error) {
         console.error("Error fetching UserData by Id:", error);

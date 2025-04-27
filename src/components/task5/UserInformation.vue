@@ -5,7 +5,7 @@
     >
     <div class="m-[15px] flex justify-center items-center w-full">
       <div
-        class="max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+        class="max-w-s p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
       >
         <div>
           <input
@@ -23,7 +23,7 @@
           is Loading .....
         </p>
         <div
-          v-else-if="userArray"
+          v-if="userArray"
           class="mb-3 p-5 font-normal text-gray-700 dark:text-gray-400"
         >
           <div>name: {{ userArray.name }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -49,17 +49,17 @@ async function fetchData() {
 
   clearTimeout(debounce);
   debounce = setTimeout(async () => {
-    isLoading.value = true;
-    userArray.value = null;
+    try {
+      isLoading.value = true;
+      userArray.value = null;
+      const data = await getUserData(userId);
+      userArray.value = data;
+      isLoading.value = false;
+    } catch (error) {
+      error.value = "error Fetch userData";
+    } finally {
+      isLoading.value = false;
+    }
   });
-  try {
-    const data = await getUserData(userId);
-    userArray.value = data;
-  } catch (error) {
-    error.value = "error Fetch userData___";
-  } finally {
-    isLoading.value = false;
-  }
 }
-// onMounted(fetchData);
 </script>
