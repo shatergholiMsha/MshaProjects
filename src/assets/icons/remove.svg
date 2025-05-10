@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500 hover:text-red-700 cursor-pointer" viewBox="0 0 24 24" fill="currentColor">
+    <path
+      d="M9 3a1 1 0 00-1 1v1H5a1 1 0 000 2h.293l.94 12.278A2 2 0 008.228 22h7.544a2 2 0 001.995-1.722L18.707 7H19a1 1 0 100-2h-3V4a1 1 0 00-1-1H9zm1 4a1 1 0 112 0v10a1 1 0 11-2 0V7zm4 0a1 1 0 112 0v10a1 1 0 11-2 0V7z" />
+  </svg>
+  

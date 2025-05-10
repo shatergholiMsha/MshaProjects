@@ -13,6 +13,12 @@
         alt=""
       />
     </router-link>
+    <router-link
+      to="/Store"
+      class="absolute left-[100px] top-[22px] flex items-center hover:bg-violet-300 active:bg-violet-700 rounded p-1"
+    >
+     Store
+    </router-link>
     <button
       @click="Toggle"
       class="absolute right-[30px] top-[15px] flex items-center gap-4 bg-white border-2 border-gray-400 p-2 px-2 py-2 rounded-xl dark:bg-black text-black dark:text-white"
