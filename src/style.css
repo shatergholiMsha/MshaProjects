@@ -2,3 +2,9 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @import "@mdi/font/css/materialdesignicons.css"; */
 /* @import "vuetify/styles"; */
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
